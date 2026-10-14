@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+CryptoLab | Vigenere Cyber Pro
+</title>
+
+
+<link rel="stylesheet" href="vigenere.css">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+🔐 CryptoLab
+</div>
+
+
+<button 
+class="back-btn"
+onclick="goDashboard()">
+
+← Dashboard
+
+</button>
+
+
+</nav>
+
+
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<div class="cyber-icon">
+🔑
+</div>
+
+
+<h1>
+VIGENERE CYBER LAB
+</h1>
+
+
+<h3>
+Professional Cryptography Simulator
+</h3>
+
+
+<div class="badge">
+
+<span>
+LEVEL 4
+</span>
+
+<span>
+PRO MODE
+</span>
+
+<span>
+SECURITY LAB
+</span>
+
+</div>
+
+
+<p>
+Polyalphabetic substitution menggunakan secret key dan Tabula Recta.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ENCRYPTION CONSOLE -->
+
+<section class="card">
+
+
+<h2>
+⚡ Encryption Console
+</h2>
+
+
+
+<label>
+Plain Text
+</label>
+
+
+<textarea id="plainText">
+CRYPTOGRAPHY
+</textarea>
+
+
+
+
+
+<label>
+Secret Key
+</label>
+
+
+<input 
+id="key"
+value="SECRET"
+placeholder="Masukkan key">
+
+
+
+
+<div class="buttons">
+
+
+<button onclick="encryptCipher()">
+🔒 Encrypt
+</button>
+
+
+<button onclick="decryptCipher()">
+🔓 Decrypt
+</button>
+
+
+<button onclick="copyResult()">
+📋 Copy
+</button>
+
+
+<button onclick="bruteForce()">
+🤖 Brute Force
+</button>
+
+
+<button onclick="terminalMode()">
+💻 Terminal
+</button>
+
+
+<button onclick="exportPDF()">
+📄 PDF
+</button>
+
+
+<button onclick="generateCertificate()">
+🏆 Certificate
+</button>
+
+
+<button onclick="resetCipher()">
+♻ Reset
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="status">
+SYSTEM READY
+</div>
+
+
+
+
+
+<label>
+Cipher Text
+</label>
+
+
+<textarea 
+id="cipherText"
+placeholder="Encrypted result">
+
+</textarea>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- CHARACTER ANIMATION -->
+
+
+<section class="card">
+
+
+<h2>
+🧬 Character Animation
+</h2>
+
+
+<div id="characterFlow">
+
+Waiting...
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PROCESS EXPLANATION -->
+
+
+<section class="card">
+
+
+<h2>
+🧠 Explain Encryption
+</h2>
+
+
+<div id="explainBox">
+
+Belum ada proses.
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- TABULA RECTA -->
+
+
+<section class="card">
+
+
+<h2>
+📚 Interactive Tabula Recta
+</h2>
+
+
+<div id="tabula">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- FREQUENCY -->
+
+
+<section class="card">
+
+
+<h2>
+📊 Frequency Analysis
+</h2>
+
+
+<div id="frequencyChart">
+
+Belum ada analisis
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- TERMINAL -->
+
+
+<section class="card">
+
+
+<h2>
+💻 Cyber Terminal
+</h2>
+
+
+<div id="terminal">
+
+> SYSTEM READY
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- HISTORY -->
+
+
+<section class="card">
+
+
+<h2>
+📜 Encryption History
+</h2>
+
+
+
+<table id="historyTable">
+
+
+<thead>
+
+<tr>
+
+<th>
+Time
+</th>
+
+
+<th>
+Plain
+</th>
+
+
+<th>
+Key
+</th>
+
+
+<th>
+Cipher
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+<tbody>
+
+</tbody>
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- BRUTE FORCE -->
+
+
+<section class="card">
+
+
+<h2>
+🤖 Brute Force Simulator
+</h2>
+
+
+<div id="bruteResult">
+
+Belum dijalankan
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- RANKING -->
+
+
+<section class="card">
+
+
+<h2>
+🏆 Cipher Ranking
+</h2>
+
+
+<div id="ranking">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- PROGRESS -->
+
+
+<section class="card">
+
+
+<h2>
+🎓 Student Progress
+</h2>
+
+
+<div id="progress">
+
+Vigenere Completion : 0%
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- CERTIFICATE -->
+
+
+<section class="card">
+
+
+<h2>
+📜 Certificate
+</h2>
+
+
+<div id="certificate">
+
+Belum selesai
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+CryptoLab
+
+<br>
+
+Developed by Wisnu Wardhana
+
+</footer>
+
+
+
+
+
+<script src="vigenere.js"></script>
+
+
+</body>
+
+</html>

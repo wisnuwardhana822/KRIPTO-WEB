@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Permutasi Vertikal | CryptoLab
+</title>
+
+
+<link rel="stylesheet" href="vertikal.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+
+<div class="logo">
+
+🔐 CryptoLab
+
+</div>
+
+
+
+<button 
+class="back-btn"
+onclick="goDashboard()">
+
+← Kembali ke Dashboard
+
+</button>
+
+
+</nav>
+
+
+
+
+
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<div class="icon">
+
+📊
+
+</div>
+
+
+
+<h1>
+
+Permutasi Vertikal
+
+</h1>
+
+
+
+<p>
+
+Vertical Permutation Cipher Algorithm
+
+</p>
+
+
+
+
+<div class="badge">
+
+
+<span>
+INTERMEDIATE
+</span>
+
+
+<span>
+POSITION BASED
+</span>
+
+
+<span>
+EDUCATION
+</span>
+
+
+
+</div>
+
+
+
+
+
+<p class="desc">
+
+Cipher yang mengubah posisi karakter dengan penyusunan vertikal berdasarkan jumlah kolom tanpa mengganti nilai huruf.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SIMULATOR -->
+
+
+<section class="card">
+
+
+<h2>
+
+⚡ Vertical Permutation Simulator
+
+</h2>
+
+
+
+<p>
+
+Menyusun plaintext secara vertikal kemudian membaca hasil secara horizontal.
+
+</p>
+
+
+
+
+
+
+
+<label>
+
+Plain Text
+
+</label>
+
+
+
+
+<div id="counter">
+
+Characters : 12
+
+</div>
+
+
+
+
+
+<textarea
+id="plainText">
+
+CRYPTOGRAPHY
+
+</textarea>
+
+
+
+
+
+
+
+
+
+<label>
+
+Jumlah Kolom
+
+</label>
+
+
+
+<input
+
+type="number"
+
+id="columns"
+
+value="3"
+
+min="2"
+
+max="10"
+
+>
+
+
+
+
+
+
+
+
+
+<div class="buttons">
+
+
+
+<button onclick="encryptCipher()">
+
+🔒 Encrypt
+
+</button>
+
+
+
+
+
+<button onclick="decryptCipher()">
+
+🔓 Decrypt
+
+</button>
+
+
+
+
+
+<button onclick="swapText()">
+
+⇄ Swap
+
+</button>
+
+
+
+
+
+<button onclick="copyResult()">
+
+📋 Copy
+
+</button>
+
+
+
+
+
+<button onclick="downloadCipher()">
+
+⬇ Download
+
+</button>
+
+
+
+
+
+<button onclick="resetCipher()">
+
+♻ Reset
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="status">
+
+Ready
+
+</div>
+
+
+
+
+
+
+
+
+
+<label>
+
+Cipher Text
+
+</label>
+
+
+
+
+<textarea
+
+id="cipherText"
+
+placeholder="Hasil cipher muncul disini">
+
+</textarea>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- GRID -->
+
+<section class="card">
+
+
+<h2>
+
+📊 Vertical Permutation Grid
+
+</h2>
+
+
+
+
+<div id="grid">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PROCESS -->
+
+
+<section class="card">
+
+
+<h2>
+
+📄 Example Process
+
+</h2>
+
+
+
+<div id="process">
+
+
+CRYPTOGRAPHY → CPGRTYRYHOA
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- INFO -->
+
+
+<section class="info">
+
+
+
+<div>
+
+
+<h3>
+
+📘 Cara Kerja
+
+</h3>
+
+
+<p>
+
+Plaintext dimasukkan ke tabel secara vertikal berdasarkan jumlah kolom, kemudian dibaca kembali secara horizontal untuk menghasilkan ciphertext.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h3>
+
+✅ Kelebihan
+
+</h3>
+
+
+<ul>
+
+<li>
+Mempertahankan karakter asli
+</li>
+
+<li>
+Mudah divisualisasikan
+</li>
+
+<li>
+Cocok pembelajaran kriptografi
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h3>
+
+⚠ Kekurangan
+
+</h3>
+
+
+<ul>
+
+<li>
+Pola masih dapat dianalisis
+</li>
+
+
+<li>
+Tidak cocok keamanan modern
+</li>
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer>
+
+CryptoLab
+
+<br>
+
+Developed by Wisnu Wardhana
+
+</footer>
+
+
+
+
+
+
+
+
+<script src="vertikal.js"></script>
+
+
+</body>
+
+
+</html>

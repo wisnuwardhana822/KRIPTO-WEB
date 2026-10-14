@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Transposition Cipher | CryptoLab
+</title>
+
+
+<link rel="stylesheet" href="transposisi.css">
+
+
+</head>
+
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+
+<div class="logo">
+
+🔐 CryptoLab
+
+</div>
+
+
+
+<button 
+class="back-btn"
+onclick="goDashboard()">
+
+← Kembali ke Dashboard
+
+</button>
+
+
+</nav>
+
+
+
+
+
+
+
+<!-- ================= HERO ================= -->
+
+
+<section class="hero">
+
+
+<div class="icon">
+
+⇄
+
+</div>
+
+
+
+<h1>
+
+Transposition Cipher
+
+</h1>
+
+
+
+<p>
+
+Columnar Transposition Algorithm
+
+</p>
+
+
+
+
+<div class="badge">
+
+
+<span>
+BEGINNER
+</span>
+
+
+<span>
+POSITION BASED
+</span>
+
+
+<span>
+EDUCATION
+</span>
+
+
+</div>
+
+
+
+
+<p class="desc">
+
+Cipher yang mengenkripsi pesan dengan mengubah posisi karakter tanpa mengganti nilai huruf.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= SIMULATOR ================= -->
+
+
+
+<section class="card">
+
+
+
+<h2>
+
+⚡ Transposition Simulator
+
+</h2>
+
+
+
+
+<p>
+
+Mengubah susunan karakter menggunakan metode Columnar Transposition.
+
+</p>
+
+
+
+
+
+<label>
+
+Plain Text
+
+</label>
+
+
+
+
+<div id="counter">
+
+Characters : 12
+
+</div>
+
+
+
+
+<textarea
+id="plainText"
+placeholder="Masukkan plaintext">
+
+CRYPTOGRAPHY
+
+</textarea>
+
+
+
+
+
+
+
+
+
+<label>
+
+Jumlah Kolom
+
+</label>
+
+
+
+<input
+
+type="number"
+
+id="columns"
+
+value="3"
+
+min="2"
+
+max="10"
+
+>
+
+
+
+
+
+
+
+
+
+<div class="buttons">
+
+
+<button onclick="encryptCipher()">
+
+🔒 Encrypt
+
+</button>
+
+
+
+<button onclick="decryptCipher()">
+
+🔓 Decrypt
+
+</button>
+
+
+
+<button onclick="swapText()">
+
+⇄ Swap
+
+</button>
+
+
+
+<button onclick="copyResult()">
+
+📋 Copy
+
+</button>
+
+
+
+<button onclick="downloadCipher()">
+
+⬇ Download
+
+</button>
+
+
+
+<button onclick="resetCipher()">
+
+♻ Reset
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="status">
+
+Ready
+
+</div>
+
+
+
+
+
+
+<label>
+
+Cipher Text
+
+</label>
+
+
+
+<textarea
+
+id="cipherText"
+
+placeholder="Hasil cipher muncul disini">
+
+</textarea>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= GRID ================= -->
+
+
+
+<section class="card">
+
+
+<h2>
+
+📊 Transposition Grid
+
+</h2>
+
+
+
+
+<div id="grid">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= PROCESS ================= -->
+
+
+
+<section class="card">
+
+
+<h2>
+
+📄 Example Process
+
+</h2>
+
+
+
+<div id="process">
+
+
+CRYPTOGRAPHY → CPGPRTHYRYOA
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= INFO ================= -->
+
+
+
+<section class="info">
+
+
+
+<div>
+
+
+<h3>
+
+📘 Cara Kerja
+
+</h3>
+
+
+
+<p>
+
+Pesan dimasukkan ke dalam tabel berdasarkan jumlah kolom kemudian dibaca secara vertikal untuk menghasilkan ciphertext.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h3>
+
+✅ Kelebihan
+
+</h3>
+
+
+<ul>
+
+
+<li>
+Mudah dipahami
+</li>
+
+
+<li>
+Mempertahankan karakter asli
+</li>
+
+
+<li>
+Cocok untuk pembelajaran kriptografi
+</li>
+
+
+</ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h3>
+
+⚠ Kekurangan
+
+</h3>
+
+
+<ul>
+
+
+<li>
+Pola masih dapat dianalisis
+</li>
+
+
+<li>
+Tidak digunakan untuk keamanan modern
+</li>
+
+
+</ul>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+
+<footer>
+
+
+CryptoLab
+
+<br>
+
+Developed by Wisnu Wardhana
+
+
+</footer>
+
+
+
+
+
+
+
+
+<script src="transposisi.js"></script>
+
+
+
+</body>
+
+
+</html>

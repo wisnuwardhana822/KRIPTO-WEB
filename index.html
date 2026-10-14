@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>
+
+KRIPTO-WEB | Cryptography Learning Laboratory
+
+</title>
+
+
+
+<!-- PWA CONFIG -->
+
+<link rel="manifest" href="manifest.json">
+
+
+<meta name="theme-color" content="#2563eb">
+
+
+
+<!-- MOBILE SUPPORT -->
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+
+<div class="logo">
+
+🔐 KRIPTO-WEB
+
+</div>
+
+
+
+<div class="nav-status">
+
+SYSTEM ONLINE
+
+</div>
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<div class="cyber-logo">
+
+🔐
+
+</div>
+
+
+
+<h1>
+
+KRIPTO-WEB
+
+</h1>
+
+
+
+
+<h2>
+
+CLASSIC CRYPTOGRAPHY
+
+<br>
+
+LEARNING PLATFORM
+
+</h2>
+
+
+
+<p>
+
+Master Encryption.
+Understand Information Security.
+
+</p>
+
+
+
+
+
+
+<div class="terminal">
+
+
+> INITIALIZING KRIPTO-WEB ENGINE...
+
+<br>
+
+> LOADING CIPHER DATABASE...
+
+<br>
+
+> SECURITY MODULE READY...
+
+<br>
+
+> SYSTEM ONLINE_
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PROGRESS -->
+
+
+<section class="dashboard-card">
+
+
+<h2>
+
+🎓 Student Progress
+
+</h2>
+
+
+
+
+<div class="progress-box">
+
+
+
+<div class="progress-bar">
+
+
+<div
+
+class="progress-fill"
+
+id="progressFill">
+
+
+83%
+
+
+</div>
+
+
+</div>
+
+
+
+<p id="progressText">
+
+
+5 / 6 Cipher Completed
+
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- STAT -->
+
+
+<section class="stats">
+
+
+<div>
+
+
+<h1>
+
+6+
+
+</h1>
+
+
+<p>
+
+Cipher Algorithm
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h1>
+
+⭐⭐⭐⭐⭐
+
+</h1>
+
+
+<p>
+
+Difficulty Level
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h1>
+
+100%
+
+</h1>
+
+
+<p>
+
+Offline Learning
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SEARCH -->
+
+
+<section class="dashboard-card">
+
+
+<h2>
+
+🔎 Search Cipher
+
+</h2>
+
+
+
+<input
+
+id="search"
+
+onkeyup="searchCipher()"
+
+placeholder="Cari algoritma cipher...">
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ROADMAP -->
+
+
+<section class="dashboard-card">
+
+
+<h2>
+
+🗺 Cryptography Roadmap
+
+</h2>
+
+
+
+
+<div id="cipherList">
+
+
+
+<div class="cipher-card">
+
+
+<h3>
+
+🟢 ROT13 Cipher
+
+</h3>
+
+
+<p>
+
+Beginner
+
+</p>
+
+
+<a href="rot13.html">
+
+Open →
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cipher-card">
+
+
+<h3>
+
+🟢 Caesar Cipher
+
+</h3>
+
+
+<p>
+
+Beginner
+
+</p>
+
+
+<a href="caesar.html">
+
+Open →
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cipher-card">
+
+
+<h3>
+
+🟡 Atbash Cipher
+
+</h3>
+
+
+<p>
+
+Intermediate
+
+</p>
+
+
+<a href="atbash.html">
+
+Open →
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cipher-card">
+
+
+<h3>
+
+🟠 Transposition Cipher
+
+</h3>
+
+
+<p>
+
+Advanced
+
+</p>
+
+
+<a href="transposisi.html">
+
+Open →
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cipher-card">
+
+
+<h3>
+
+🔴 Vertical Permutation
+
+</h3>
+
+
+<p>
+
+Expert
+
+</p>
+
+
+<a href="vertikal.html">
+
+Open →
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cipher-card completed">
+
+
+<h3>
+
+👑 Vigenere Cipher
+
+</h3>
+
+
+<p>
+
+Master Level
+
+</p>
+
+
+<a href="vigenere.html">
+
+Open →
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ACHIEVEMENT -->
+
+
+<section class="dashboard-card">
+
+
+<h2>
+
+🏆 Achievement
+
+</h2>
+
+
+
+
+<div class="achievement">
+
+
+<div>
+
+🏅
+
+<br>
+
+First Encryption
+
+</div>
+
+
+
+<div>
+
+🥇
+
+<br>
+
+Cipher Explorer
+
+</div>
+
+
+
+<div>
+
+👑
+
+<br>
+
+Vigenere Master
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- TERMINAL -->
+
+
+<section class="dashboard-card">
+
+
+<h2>
+
+💻 Global Terminal
+
+</h2>
+
+
+
+<div id="globalTerminal">
+
+
+> SYSTEM READY_
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<h3>
+
+KRIPTO-WEB
+
+</h3>
+
+
+<p>
+
+Classic Cryptography Learning Laboratory
+
+</p>
+
+
+
+<p>
+
+Developed by Wisnu Wardhana
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+
+if("serviceWorker" in navigator){
+
+
+window.addEventListener(
+"load",
+()=>{
+
+
+navigator.serviceWorker.register(
+"service-worker.js"
+);
+
+
+});
+
+
+}
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

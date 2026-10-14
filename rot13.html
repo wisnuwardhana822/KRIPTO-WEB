@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+ROT13 Cipher | CryptoLab
+</title>
+
+
+<link rel="stylesheet" href="rot13.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- ================= NAVBAR ================= -->
+
+
+<nav class="navbar">
+
+<div class="brand">
+🔐 CryptoLab
+</div>
+
+
+<a href="index.html" class="back-btn">
+← Kembali ke Dashboard
+</a>
+
+
+</nav>
+
+
+
+
+
+<!-- ================= HERO ================= -->
+
+
+<section class="hero">
+
+
+<div class="hero-icon">
+🔄
+</div>
+
+
+
+<h1>
+ROT13 Cipher
+</h1>
+
+
+
+<p class="subtitle">
+Classic Substitution Algorithm
+</p>
+
+
+
+<div class="badges">
+
+
+<span>
+BEGINNER
+</span>
+
+
+<span>
+SHIFT +13
+</span>
+
+
+<span>
+EDUCATION
+</span>
+
+
+</div>
+
+
+
+<p class="hero-text">
+
+Algoritma kriptografi yang mengganti setiap huruf
+dengan huruf lain yang berjarak 13 posisi.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= SIMULATOR ================= -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+⚡ ROT13 Encryption Simulator
+</h2>
+
+
+<p>
+Masukkan teks untuk melakukan proses enkripsi dan dekripsi.
+</p>
+
+
+
+
+<div class="input-box">
+
+
+<label>
+Plain Text
+</label>
+
+
+<textarea 
+id="inputText"
+placeholder="Contoh: HELLO WORLD">
+</textarea>
+
+
+
+</div>
+
+
+
+
+
+<div class="button-area">
+
+
+<button onclick="encryptROT13()">
+🔒 Encrypt
+</button>
+
+
+<button onclick="decryptROT13()">
+🔓 Decrypt
+</button>
+
+
+<button onclick="swapText()">
+⇄ Swap
+</button>
+
+
+<button onclick="copyResult()">
+📋 Copy
+</button>
+
+
+<button onclick="downloadResult()">
+⬇ Download
+</button>
+
+
+<button onclick="resetText()">
+♻ Reset
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="output-box">
+
+
+<label>
+Cipher Text
+</label>
+
+
+<textarea 
+id="result"
+placeholder="Hasil akan muncul di sini"
+readonly>
+</textarea>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= VISUAL ================= -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+🔤 ROT13 Shift Visualization
+</h2>
+
+
+
+<div class="visual-box">
+
+
+<h4>
+Original Alphabet
+</h4>
+
+
+<div class="alphabet">
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+</div>
+
+
+
+<div class="shift">
+
++13 SHIFT
+
+</div>
+
+
+
+<div class="line">
+↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+</div>
+
+
+
+
+<h4>
+Encrypted Alphabet
+</h4>
+
+
+<div class="alphabet blue">
+
+NOPQRSTUVWXYZABCDEFGHIJKLM
+
+</div>
+
+
+
+<p>
+Every character moves exactly 13 positions
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ================= MAPPING ================= -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+🧩 ROT13 Mapping
+</h2>
+
+
+
+<div class="mapping-grid">
+
+
+<div>A → N</div>
+<div>B → O</div>
+<div>C → P</div>
+
+<div>D → Q</div>
+<div>E → R</div>
+<div>F → S</div>
+
+<div>G → T</div>
+<div>H → U</div>
+<div>I → V</div>
+
+<div>J → W</div>
+<div>K → X</div>
+<div>L → Y</div>
+
+<div>M → Z</div>
+<div>N → A</div>
+<div>O → B</div>
+
+<div>P → C</div>
+<div>Q → D</div>
+<div>R → E</div>
+
+<div>S → F</div>
+<div>T → G</div>
+<div>U → H</div>
+
+<div>V → I</div>
+<div>W → J</div>
+<div>X → K</div>
+
+<div>Y → L</div>
+<div>Z → M</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ================= EXAMPLE ================= -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+📄 Encryption Example
+</h2>
+
+
+
+<div class="example">
+
+
+<div>
+
+
+<h4>
+PLAINTEXT
+</h4>
+
+
+<strong>
+HELLO
+</strong>
+
+
+</div>
+
+
+
+
+
+<div class="process">
+
+
+H → U
+
+<br>
+
+E → R
+
+<br>
+
+L → Y
+
+<br>
+
+L → Y
+
+<br>
+
+O → B
+
+
+</div>
+
+
+
+
+
+
+<div>
+
+
+<h4>
+CIPHERTEXT
+</h4>
+
+
+<strong class="blue">
+URYYB
+</strong>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ================= INFO ================= -->
+
+
+<section class="info">
+
+
+<div>
+
+
+<h3>
+📘 Cara Kerja
+</h3>
+
+
+<p>
+
+ROT13 mengganti setiap karakter alfabet
+dengan huruf yang bergeser 13 posisi.
+
+</p>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h3>
+✅ Kelebihan
+</h3>
+
+
+<ul>
+
+<li>
+Mudah dipahami
+</li>
+
+<li>
+Cepat digunakan
+</li>
+
+<li>
+Cocok pembelajaran kriptografi
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h3>
+⚠ Kekurangan
+</h3>
+
+
+<ul>
+
+<li>
+Tidak aman untuk data rahasia
+</li>
+
+<li>
+Hanya memiliki satu pola perubahan
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+
+CryptoLab
+
+<br>
+
+Developed by Wisnu Wardhana
+
+
+</footer>
+
+
+
+
+
+<script src="rot13.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Atbash Cipher | CryptoLab
+</title>
+
+
+<link rel="stylesheet" href="atbash.css">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+
+<div class="brand">
+
+🔐 CryptoLab
+
+</div>
+
+
+
+<a href="index.html" class="back-btn">
+
+← Kembali ke Dashboard
+
+</a>
+
+
+</nav>
+
+
+
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-icon">
+
+🔁
+
+</div>
+
+
+
+<h1>
+
+Atbash Cipher
+
+</h1>
+
+
+
+<p class="subtitle">
+
+Alphabet Reverse Substitution Algorithm
+
+</p>
+
+
+
+<div class="badges">
+
+
+<span>
+BEGINNER
+</span>
+
+
+<span>
+A ↔ Z
+</span>
+
+
+<span>
+MIRROR CIPHER
+</span>
+
+
+</div>
+
+
+
+
+<p class="hero-text">
+
+
+Atbash mengganti setiap huruf dengan pasangan
+huruf yang berlawanan dalam alfabet.
+
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SIMULATOR -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+⚡ Atbash Encryption Tool
+
+</h2>
+
+
+<p>
+
+Masukkan teks untuk melakukan proses enkripsi atau dekripsi.
+
+</p>
+
+
+
+
+
+
+<label>
+
+Plain Text
+
+</label>
+
+
+
+<textarea
+
+id="inputText"
+
+placeholder="Contoh: HELLO WORLD">
+
+</textarea>
+
+
+
+
+
+
+
+<div class="button-area">
+
+
+<button onclick="encryptAtbash()">
+
+🔒 Encrypt
+
+</button>
+
+
+
+<button onclick="decryptAtbash()">
+
+🔓 Decrypt
+
+</button>
+
+
+
+<button onclick="swapText()">
+
+⇄ Swap
+
+</button>
+
+
+
+<button onclick="copyResult()">
+
+📋 Copy
+
+</button>
+
+
+
+<button onclick="downloadResult()">
+
+⬇ Download
+
+</button>
+
+
+
+<button onclick="resetText()">
+
+♻ Reset
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<label>
+
+Cipher Text
+
+</label>
+
+
+<textarea
+
+id="result"
+
+readonly
+
+placeholder="Hasil akan muncul">
+
+</textarea>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- VISUALIZATION -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+🔤 Atbash Alphabet Visualization
+
+</h2>
+
+
+
+<div class="visual-box">
+
+
+<h4>
+
+Original Alphabet
+
+</h4>
+
+
+
+<div class="alphabet">
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+</div>
+
+
+
+
+
+<div class="arrow">
+
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+</div>
+
+
+
+
+
+<h4>
+
+Reversed Alphabet
+
+</h4>
+
+
+
+
+<div class="alphabet blue">
+
+ZYXWVUTSRQPONMLKJIHGFEDCBA
+
+</div>
+
+
+
+
+<p>
+
+Alphabet dibalik seperti cermin.
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- MAPPING -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+🧩 Atbash Character Mapping
+
+</h2>
+
+
+
+<div class="mapping-grid">
+
+
+<div>A → Z</div>
+<div>B → Y</div>
+<div>C → X</div>
+
+
+<div>D → W</div>
+<div>E → V</div>
+<div>F → U</div>
+
+
+<div>G → T</div>
+<div>H → S</div>
+<div>I → R</div>
+
+
+<div>J → Q</div>
+<div>K → P</div>
+<div>L → O</div>
+
+
+<div>M → N</div>
+<div>N → M</div>
+<div>O → L</div>
+
+
+<div>P → K</div>
+<div>Q → J</div>
+<div>R → I</div>
+
+
+<div>S → H</div>
+<div>T → G</div>
+<div>U → F</div>
+
+
+<div>V → E</div>
+<div>W → D</div>
+<div>X → C</div>
+
+
+<div>Y → B</div>
+<div>Z → A</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- EXAMPLE -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+📄 Encryption Example
+
+</h2>
+
+
+
+
+<div class="example">
+
+
+<div>
+
+
+<h4>
+PLAINTEXT
+</h4>
+
+
+<strong>
+
+HELLO
+
+</strong>
+
+
+</div>
+
+
+
+
+
+
+<div class="process">
+
+
+H → S
+
+<br>
+
+E → V
+
+<br>
+
+L → O
+
+<br>
+
+L → O
+
+<br>
+
+O → L
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h4>
+CIPHERTEXT
+</h4>
+
+
+<strong class="blue">
+
+SVOOL
+
+</strong>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- INFO -->
+
+
+<section class="info">
+
+
+<div>
+
+
+<h3>
+📘 Cara Kerja
+</h3>
+
+
+<p>
+
+Atbash mengganti huruf berdasarkan posisi
+terbalik pada alfabet.
+
+</p>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h3>
+✅ Kelebihan
+</h3>
+
+
+<ul>
+
+<li>
+Sangat mudah dipahami
+</li>
+
+<li>
+Tidak membutuhkan key
+</li>
+
+<li>
+Bagus untuk belajar cipher klasik
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h3>
+⚠ Kekurangan
+</h3>
+
+
+<ul>
+
+<li>
+Keamanan sangat rendah
+</li>
+
+<li>
+Pola mudah ditebak
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer>
+
+
+CryptoLab
+
+<br>
+
+Developed by Wisnu Wardhana
+
+
+</footer>
+
+
+
+
+
+<script src="atbash.js"></script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "KRIPTO-WEB",
+  "short_name": "KRIPTO-WEB",
+  "description": "Classic Cryptography Learning Laboratory",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563eb",
+  "orientation": "portrait"
+}

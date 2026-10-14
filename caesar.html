@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Caesar Cipher | CryptoLab
+</title>
+
+
+<link rel="stylesheet" href="caesar.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+
+<nav class="navbar">
+
+
+<div class="brand">
+
+🔐 CryptoLab
+
+</div>
+
+
+
+<a href="index.html" class="back-btn">
+
+← Kembali ke Dashboard
+
+</a>
+
+
+
+</nav>
+
+
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-icon">
+
+🔑
+
+</div>
+
+
+
+<h1>
+
+Caesar Cipher
+
+</h1>
+
+
+<p class="subtitle">
+
+Classic Shift Substitution Algorithm
+
+</p>
+
+
+
+<div class="badges">
+
+
+<span>
+BEGINNER
+</span>
+
+
+<span>
+SHIFT 1 - 25
+</span>
+
+
+<span>
+INTERACTIVE
+</span>
+
+
+
+</div>
+
+
+
+<p class="hero-text">
+
+Algoritma substitusi yang mengganti setiap huruf
+dengan pergeseran tertentu menggunakan key.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- SIMULATOR -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+
+<h2>
+⚡ Caesar Encryption Tool
+</h2>
+
+
+<p>
+Atur nilai shift kemudian lakukan enkripsi atau dekripsi.
+</p>
+
+
+
+
+
+
+<div class="input-box">
+
+
+<label>
+
+Plain Text
+
+</label>
+
+
+<textarea 
+id="inputText"
+placeholder="Contoh: HELLO WORLD">
+</textarea>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- KEY -->
+
+
+<div class="key-box">
+
+
+<label>
+
+Shift Key
+
+:
+<span id="shiftValue">
+3
+</span>
+
+</label>
+
+
+
+<input
+
+type="range"
+
+id="shift"
+
+min="1"
+
+max="25"
+
+value="3"
+
+oninput="updateShift()"
+
+>
+
+
+
+<div class="range-info">
+
+1 ---------------- 25
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="button-area">
+
+
+<button onclick="encryptCaesar()">
+
+🔒 Encrypt
+
+</button>
+
+
+
+<button onclick="decryptCaesar()">
+
+🔓 Decrypt
+
+</button>
+
+
+
+<button onclick="swapText()">
+
+⇄ Swap
+
+</button>
+
+
+
+<button onclick="copyResult()">
+
+📋 Copy
+
+</button>
+
+
+
+<button onclick="downloadResult()">
+
+⬇ Download
+
+</button>
+
+
+
+<button onclick="resetText()">
+
+♻ Reset
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="output-box">
+
+
+<label>
+
+Cipher Text
+
+</label>
+
+
+<textarea
+
+id="result"
+
+readonly
+
+placeholder="Hasil akan muncul">
+
+</textarea>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- VISUAL SHIFT -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+🔤 Caesar Shift Visualization
+
+</h2>
+
+
+
+
+<div class="visual-box">
+
+
+
+<h4>
+Original Alphabet
+</h4>
+
+
+<div id="originalAlphabet" class="alphabet">
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+</div>
+
+
+
+<div class="shift-display">
+
++
+<span id="visualKey">
+3
+</span>
+SHIFT
+
+</div>
+
+
+
+
+<div class="line">
+
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+</div>
+
+
+
+
+<h4>
+Encrypted Alphabet
+</h4>
+
+
+
+<div id="cipherAlphabet" class="alphabet blue">
+
+DEFGHIJKLMNOPQRSTUVWXYZABC
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- MAPPING -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+🧩 Caesar Character Mapping
+
+</h2>
+
+
+
+<div id="mapping" class="mapping-grid">
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- EXAMPLE -->
+
+
+<section class="container">
+
+
+<div class="card">
+
+
+<h2>
+
+📄 Encryption Example
+
+</h2>
+
+
+
+
+<div class="example">
+
+
+
+<div>
+
+
+<h4>
+PLAINTEXT
+</h4>
+
+
+<strong>
+HELLO
+</strong>
+
+
+</div>
+
+
+
+
+
+
+<div class="process">
+
+
+H → K
+
+<br>
+
+E → H
+
+<br>
+
+L → O
+
+<br>
+
+L → O
+
+<br>
+
+O → R
+
+
+</div>
+
+
+
+
+
+
+<div>
+
+
+<h4>
+CIPHERTEXT
+</h4>
+
+
+<strong class="blue">
+
+KHOOR
+
+</strong>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- INFO -->
+
+
+<section class="info">
+
+
+<div>
+
+
+<h3>
+
+📘 Cara Kerja
+
+</h3>
+
+
+<p>
+
+Caesar Cipher menggeser setiap huruf berdasarkan nilai key tertentu.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h3>
+
+✅ Kelebihan
+
+</h3>
+
+
+<ul>
+
+<li>
+Mudah dipelajari
+</li>
+
+<li>
+Memiliki variasi key
+</li>
+
+<li>
+Bagus untuk konsep dasar kriptografi
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h3>
+
+⚠ Kekurangan
+
+</h3>
+
+
+<ul>
+
+<li>
+Mudah dipecahkan
+</li>
+
+<li>
+Hanya memiliki 25 kemungkinan shift
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+CryptoLab
+
+<br>
+
+Developed by Wisnu Wardhana
+
+
+</footer>
+
+
+
+
+<script src="caesar.js"></script>
+
+
+
+</body>
+
+</html>
